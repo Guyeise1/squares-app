@@ -1,0 +1,18 @@
+.square {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    gap: 1px;
+    width: 202px;
+    height: 202px;
+}
+
+.little-square {
+    background-color: #333;
+    width: 20px;
+    height: 20px;
+}
+
+
+
+

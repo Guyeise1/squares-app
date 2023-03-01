@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useEffect, useState} from 'react';
 import './App.css';
+import square from "./square";
+import {colorArray} from "./colorProvider";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    const [colors, setColors] = useState<string[]>()
+    useEffect(() => {
+        setInterval(() => colorArray(10 * 10).then(setColors), 1000)
+    }, [])
+    return (
+        <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            height: '100',
+        }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+            {square(colors)}
+        </div>
+    )
 }
 
 export default App;

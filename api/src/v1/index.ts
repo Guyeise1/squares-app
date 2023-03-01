@@ -1,9 +1,14 @@
 import {Router} from "express";
 
 export const router = Router()
+function getRandomInt(max: number) {
+    return Math.floor(Math.random() * max);
+}
 
+function randomColor() {
+    return "#" + getRandomInt(255).toString() + getRandomInt(255).toString() + getRandomInt(255).toString()
+}
 router.get("/color", (req, res) => {
-    res.status(200).json(
-        {color: process.env.COLOR || "white"}
-    )
+    const obj = {color: process.env.MY_COLOR || randomColor()}
+    res.status(200).json(obj)
 })
