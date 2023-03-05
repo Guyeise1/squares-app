@@ -6,7 +6,9 @@ function getRandomInt(max: number) {
 }
 
 function randomColor() {
-    return "#" + getRandomInt(255).toString() + getRandomInt(255).toString() + getRandomInt(255).toString()
+    return "#" + getRandomInt(256).toString(16) +
+        getRandomInt(256).toString(16) +
+        getRandomInt(256).toString(16)
 }
 router.get("/color", (req, res) => {
     const obj = {color: process.env.MY_COLOR || randomColor()}

@@ -11,7 +11,6 @@ spec:
       maxSurge: 1
       maxUnavailable: 0
     type: RollingUpdate
-
   selector:
     matchLabels:
       app: square-app
@@ -21,8 +20,7 @@ spec:
         app: square-app
     spec:
       containers:
-      - image: square-app
-        imagePullPolicy: IfNotPresent
+      - image: guyeise5/square-app:latest
         name: square-app
         ports:
         - containerPort: 8080
