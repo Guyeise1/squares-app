@@ -5,10 +5,11 @@
     gap: 1px;
     width: 202px;
     height: 202px;
+    flex: border-box;
+    justify-content: center;
 }
 
 .little-square {
-    background-color: #333;
     width: 40px;
     height: 40px;
 }
